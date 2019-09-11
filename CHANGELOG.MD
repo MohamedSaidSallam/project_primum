@@ -6,11 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [v1.0.0] - 2017-06-20
+## [v0.0.1] - 2019-09-XX
 
 ### Added
 
-- XXXX
+- Base Project
+- Prototype Assets
+- Tracking Camera
+- Floating Joystick
+- Basic motion prototype
 
 ### Changed
 
@@ -37,6 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - XXXX
+
 
 ### Changed
 
