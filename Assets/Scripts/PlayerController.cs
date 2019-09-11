@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private FloatingJoystick joystick;
+    [SerializeField] private FloatingJoystick joystick = null;
     [SerializeField] private float speed = 0.12f;
-
-    private Rigidbody Rigidbody;
+    [SerializeField] private Rigidbody Rigidbody = null;
 
     // Start is called before the first frame update
     void Start() {
-        Rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
