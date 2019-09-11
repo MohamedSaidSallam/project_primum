@@ -115,8 +115,8 @@
 
 # Collapse Unity-generated files on GitHub
 
-*.asset     linguist-generated
-*.mat       linguist-generated
-*.meta      linguist-generated
-*.prefab    linguist-generated
-*.unity     linguist-generated
+*.asset linguist-generated
+*.mat linguist-generated
+*.meta linguist-generated
+*.prefab linguist-generated
+*.unity linguist-generated
