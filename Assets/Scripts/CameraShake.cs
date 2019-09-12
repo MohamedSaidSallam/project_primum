@@ -9,7 +9,7 @@ public class CameraShake : MonoBehaviour
     [SerializeField] private float shakeDuration = 0.2f;
     [SerializeField] private float shakeAmplitude = 1.2f;
     [SerializeField] private float shakeFrequency = 2.0f;
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera = null;
 
     private float elapsedTime = 0f;
     private CinemachineBasicMultiChannelPerlin virtualCameraNoise;

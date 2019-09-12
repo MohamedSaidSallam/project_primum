@@ -14,8 +14,12 @@ public class HPBar : MonoBehaviour
             healthSystem.heal(20);
         }
         if (Input.GetKeyDown(KeyCode.D)) {
-            healthSystem.damage(20);
-            CameraShake.isDamaged = true;
+
+            healthSystem.damage(20,this.transform.position + new Vector3(1.6f,-1));
+            if (healthSystem.getHealth() > 0) {
+                CameraShake.isDamaged = true;
+            }
+            
         }
 
         localTransform.localScale = new Vector3(healthSystem.getHealthPercent(), 1);

@@ -19,10 +19,13 @@ public class HealthSystem
         return (float)health / maxHealth;
     }
 
-    public void damage(int amount) {
+    public void damage(int amount,Vector3 objectLocation) {
         if (health > 0) {
             health = Mathf.Max(0, health - amount);
             OnhealthChanged?.Invoke(this, EventArgs.Empty);
+            if(objectLocation != null) {
+                DamagePopup.Create(objectLocation, amount);
+            }
         }
     }
     public void heal(int amount) {
@@ -32,8 +35,8 @@ public class HealthSystem
         }
     }
 
-    public void damagePercent(float percentage) {
-        damage((int)(percentage * health));
+    public void damagePercent(float percentage,Vector3 location) {
+        damage((int)(percentage * health),location);
     }
     public void healPercent(float percentage) {
         heal((int)(percentage * health));
