@@ -469,6 +469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 2093792909}
   speed: 0.12
+  Rigidbody: {fileID: 489299102}
 --- !u!54 &489299102
 Rigidbody:
   m_ObjectHideFlags: 0
