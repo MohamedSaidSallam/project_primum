@@ -15,6 +15,7 @@ public class HPBar : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D)) {
             healthSystem.damage(20);
+            CameraShake.isDamaged = true;
         }
 
         localTransform.localScale = new Vector3(healthSystem.getHealthPercent(), 1);

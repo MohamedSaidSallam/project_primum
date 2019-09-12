@@ -20,12 +20,16 @@ public class HealthSystem
     }
 
     public void damage(int amount) {
-        health = Mathf.Max(0, health - amount);
-        OnhealthChanged?.Invoke(this, EventArgs.Empty);
+        if (health > 0) {
+            health = Mathf.Max(0, health - amount);
+            OnhealthChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
     public void heal(int amount) {
-        health = Mathf.Min(maxHealth, health + amount);
-        OnhealthChanged?.Invoke(this, EventArgs.Empty);
+        if (health < maxHealth) {
+            health = Mathf.Min(maxHealth, health + amount);
+            OnhealthChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public void damagePercent(float percentage) {

@@ -7,7 +7,6 @@ public class GameHandler : MonoBehaviour
 {
     [SerializeField] private Transform healthBarPrefab = null;
 
-    public event EventHandler OnClick;
     // Start is called before the first frame update
     void Start()
     {
