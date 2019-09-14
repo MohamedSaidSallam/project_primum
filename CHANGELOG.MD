@@ -18,7 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Player Health
   - Health bar
   - Camera Shake on Damage
-  - Pop up text with Damage value
+  - Pop up text with health change
 
 ### Changed
 

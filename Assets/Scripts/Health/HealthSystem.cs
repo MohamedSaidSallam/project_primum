@@ -86,16 +86,4 @@ public class HealthSystem : MonoBehaviour
         textMeshPro.color = color;
         textMeshPro.text = amount.ToString();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Heal(20);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Damage(20);
-        }
-    }
 }
