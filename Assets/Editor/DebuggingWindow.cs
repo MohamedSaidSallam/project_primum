@@ -32,15 +32,29 @@ public class DebuggingWindow : EditorWindow
         if (healthSectionFoldState)
         {
             dmgAmount = EditorGUILayout.IntField("Damage Amount", dmgAmount);
-            if (GUILayout.Button("Damage Player"))
+            if (GUILayout.Button("Damage Selected"))
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>().Damage(dmgAmount);
+                foreach (GameObject obj in Selection.gameObjects)
+                {
+                    HealthSystem healthSystem = obj.GetComponent<HealthSystem>();
+                    if (healthSystem)
+                    {
+                        healthSystem.Damage(dmgAmount);
+                    }
+                }
             }
 
             healAmount = EditorGUILayout.IntField("Heal Amount", healAmount);
-            if (GUILayout.Button("Heal Player"))
+            if (GUILayout.Button("Heal Selected"))
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>().Heal(healAmount);
+                foreach (GameObject obj in Selection.gameObjects)
+                {
+                    HealthSystem healthSystem = obj.GetComponent<HealthSystem>();
+                    if (healthSystem)
+                    {
+                        healthSystem.Heal(healAmount);
+                    }
+                }
             }
         }
     }

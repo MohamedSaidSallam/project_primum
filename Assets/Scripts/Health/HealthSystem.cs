@@ -28,6 +28,9 @@ public class HealthSystem : MonoBehaviour
     [SerializeField]
     private Vector3 dmgPopupOffset = Vector3.zero;
 
+    public delegate void onDeathEvent();
+    public onDeathEvent onDeath;
+
     private readonly Quaternion lookAtCameraRotation = new Quaternion(0, 180, 0, 0);
 
     public int Health { get => health; set => health = value; }
@@ -54,6 +57,10 @@ public class HealthSystem : MonoBehaviour
             if (shakeCamera) cameraShake.ShakeCamera();
             createDamagePopup(amount, Color.red);
             healthChange();
+            if (Health == 0)
+            {
+                onDeath();
+            }
         }
     }
 
