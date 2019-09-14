@@ -1820,6 +1820,8 @@ GameObject:
   - component: {fileID: 1665419812}
   - component: {fileID: 1665419814}
   - component: {fileID: 1665419815}
+  - component: {fileID: 1665419816}
+  - component: {fileID: 1665419817}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1913,10 +1915,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20ded236e06ac249b0707ccf4d6151e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 1665419813}
   gameManager: {fileID: 1445495601}
   weapons:
   - {fileID: 1665419814}
+  enemyMovement: {fileID: 1665419817}
 --- !u!195 &1665419813
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1974,6 +1976,32 @@ MonoBehaviour:
     type: 3}
   emptyParentTransform: {fileID: 971687862}
   dmgPopupOffset: {x: 1, y: 1, z: 0}
+--- !u!114 &1665419816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665419807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bd80a661874dd409a8724dc98a81f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 1665419813}
+  gameManager: {fileID: 1445495601}
+--- !u!114 &1665419817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665419807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0840483d9245d4b8a73510f90b319d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
