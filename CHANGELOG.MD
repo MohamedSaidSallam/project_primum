@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [v0.0.1] - 2019-09-XX
+## [v0.0.3] - 2019-09-XX
 
 ### Added
 
@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Tracking Camera
 - Floating Joystick
 - Basic motion prototype
+- Player Health
+  - Health bar
+  - Camera Shake on Damage
+  - Pop up text with Damage value
 
 ### Changed
 

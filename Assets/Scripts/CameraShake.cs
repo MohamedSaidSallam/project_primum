@@ -1,8 +1,6 @@
 ﻿using Cinemachine;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CameraShake : MonoBehaviour
 {
@@ -11,36 +9,26 @@ public class CameraShake : MonoBehaviour
     [SerializeField] private float shakeFrequency = 2.0f;
     [SerializeField] private CinemachineVirtualCamera virtualCamera = null;
 
-    private float elapsedTime = 0f;
     private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
+    private WaitForSeconds waitForSeconds;
 
-    [HideInInspector]public static bool isDamaged = false;
-
-    void Start()
+    private void Start()
     {
-        if(virtualCamera != null) {
-            virtualCameraNoise = virtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
-        }
+        virtualCameraNoise = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        waitForSeconds = new WaitForSeconds(shakeDuration);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShakeCamera()
     {
-        if (isDamaged) {
-            elapsedTime = shakeDuration;
-        }
+        StartCoroutine(startCameraShake());
+    }
 
-        if(virtualCamera != null || virtualCameraNoise != null) {
-            isDamaged = false;
-            if (elapsedTime > 0) {
-                virtualCameraNoise.m_AmplitudeGain = shakeAmplitude;
-                virtualCameraNoise.m_FrequencyGain = shakeFrequency;
-
-                elapsedTime -= Time.deltaTime;
-            } else {
-                virtualCameraNoise.m_AmplitudeGain = 0f;
-                elapsedTime = 0f;
-            }
-        }
+    private IEnumerator startCameraShake()
+    {
+        virtualCameraNoise.m_AmplitudeGain = shakeAmplitude;
+        virtualCameraNoise.m_FrequencyGain = shakeFrequency;
+        yield return waitForSeconds;
+        virtualCameraNoise.m_AmplitudeGain = 0f;
+        virtualCameraNoise.m_FrequencyGain = 0f;
     }
 }
