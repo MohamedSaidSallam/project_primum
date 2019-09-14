@@ -19,6 +19,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Health bar
   - Camera Shake on Damage
   - Pop up text with health change
+- Enemy
+  - Movement
+    - Basic Movement (Nav Mesh Agent)
+    - Stationary
+  - Weapons
+    - Self Explode
+  - Death
+  - Health system & Health bar
+- Automatic NavMesh Generation
 
 ### Changed
 
@@ -45,7 +54,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - XXXX
-
 
 ### Changed
 

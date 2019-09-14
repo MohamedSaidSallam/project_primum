@@ -11,6 +11,14 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     [Tooltip("Movement Component of the current enemy")]
     private EnemyMovement enemyMovement = null;
+    [SerializeField]
+    [Tooltip("HealthSystem component to assign this component to it's onDeath call")]
+    private HealthSystem HealthSystem = null;
+
+    private void Start()
+    {
+        HealthSystem.onDeath += die;
+    }
 
     private void Update()
     {
@@ -21,5 +29,10 @@ public class EnemyLogic : MonoBehaviour
                 enemyMovement.Move();
             }
         }
+    }
+
+    private void die()
+    {
+        Destroy(gameObject);
     }
 }
