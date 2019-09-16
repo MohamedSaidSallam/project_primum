@@ -6,7 +6,7 @@ namespace playerFiring
     {
         [SerializeField] private GameObject projectile = null;
 
-        [SerializeField] private double fireRate = 1000;
+        [SerializeField] private double fireRate = 1;
         [SerializeField] private double movePenalty = 0.33;
         private double nextFire;
 

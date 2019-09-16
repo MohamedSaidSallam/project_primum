@@ -7,7 +7,7 @@ namespace playerFiring
     {
 
         [SerializeField] private new Rigidbody rigidbody = null;
-        [SerializeField] private float bulletSpeed = 10;
+        [SerializeField] private float bulletSpeed = 15;
         [SerializeField] private GameObject[] enemies;
         public GameObject target;
 
