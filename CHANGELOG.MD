@@ -19,12 +19,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Health bar
   - Camera Shake on Damage
   - Pop up text with health change
+- Player firing system
+  - target lock
+  - auto firing
 - Enemy
   - Movement
     - Basic Movement (Nav Mesh Agent)
     - Stationary
   - Weapons
     - Self Explode
+  - collision damage
   - Death
   - Health system & Health bar
 - Automatic NavMesh Generation
