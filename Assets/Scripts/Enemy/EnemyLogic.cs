@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyLogic : MonoBehaviour
 {
@@ -14,7 +15,11 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     [Tooltip("HealthSystem component to assign this component to it's onDeath call")]
     private HealthSystem HealthSystem = null;
-
+    [FormerlySerializedAs("CollisionDamage")]
+    [SerializeField]
+    [Tooltip("Damage on collision with player")]
+    public int CollisionDamage = 0;
+    
     private void Start()
     {
         HealthSystem.onDeath += die;

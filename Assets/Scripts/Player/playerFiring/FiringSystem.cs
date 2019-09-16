@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using Cinemachine.Utility;
+﻿using Cinemachine.Utility;
 using UnityEngine;
 
-namespace playerFiring
+namespace Player.playerFiring
 {
     //todo suggestion move targeting to a seperate script
     public class FiringSystem : MonoBehaviour
