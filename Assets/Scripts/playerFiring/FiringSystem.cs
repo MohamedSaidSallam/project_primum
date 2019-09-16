@@ -5,14 +5,15 @@ using UnityEngine;
 
 namespace playerFiring
 {
+    //todo suggestion move targeting to a seperate script
     public class FiringSystem : MonoBehaviour
     {
         [SerializeField] public GameObject projectile = null;
 
         [SerializeField] private double fireRate = 1;
         [SerializeField] private double movePenalty = 0.33;
-        [SerializeField] private GameManager gameManager;
-        [SerializeField] private Rigidbody Rigidbody;
+        [SerializeField] private GameManager gameManager = null;
+        [SerializeField] private Rigidbody Rigidbody = null;
         private Vector3 direction;
         public GameObject target = null;
         private double nextFire;
@@ -30,10 +31,10 @@ namespace playerFiring
             if (!Rigidbody.velocity.AlmostZero())
             {
                 nextFire += movePenalty;
+                target = null;
                 return;
             }
-
-            Debug.Log(gameManager.Enemies.Count);
+            
             if (gameManager.Enemies.Count == 0) return;
 
             if (target == null)
