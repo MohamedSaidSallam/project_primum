@@ -33,7 +33,11 @@ public class EnemyLogic : MonoBehaviour
 
     private void die()
     {
-        gameManager.Enemies.Remove(gameObject);
         Destroy(gameObject);
+    }
+    
+    private void OnDestroy()
+    {
+        gameManager.Enemies.Remove(gameObject);
     }
 }
