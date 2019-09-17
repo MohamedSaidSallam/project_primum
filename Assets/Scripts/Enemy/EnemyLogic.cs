@@ -38,7 +38,7 @@ public class EnemyLogic : MonoBehaviour
         }
     }
 
-    private void die()
+    public void die()
     {
         Destroy(gameObject);
     }

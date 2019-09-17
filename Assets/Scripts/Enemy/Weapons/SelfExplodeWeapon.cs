@@ -18,6 +18,6 @@ public class SelfExplodeWeapon : Weapon
     protected override void Attack(GameObject player, GameObject attacker)
     {
         player.GetComponent<HealthSystem>().Damage(damageAmount);
-        Destroy(attacker.gameObject);
+        attacker.GetComponent<EnemyLogic>().die();
     }
 }
