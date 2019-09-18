@@ -15,9 +15,13 @@ namespace Enemy.Movement
         private float fastInterval = 0.7f;
         [SerializeField]
         private float slowInterval = 3f;
+        [SerializeField]
+        private int speedMultiplier = 6;
+
         private float nextChange = 0;
         private bool normalPace = true;
         private Vector3 velocity;
+
         /// <summary>
         /// Moves the enemy towards the player using the navMeshAgent.
         /// </summary>
@@ -29,11 +33,11 @@ namespace Enemy.Movement
                 nextChange += normalPace ? slowInterval : fastInterval;
                 if (!normalPace)
                 {
-                    navMeshAgent.speed *= 6;
+                    navMeshAgent.speed *= speedMultiplier;
                 }
                 else
                 {
-                    navMeshAgent.speed /= 6;
+                    navMeshAgent.speed /= speedMultiplier;
                 }
             }
 

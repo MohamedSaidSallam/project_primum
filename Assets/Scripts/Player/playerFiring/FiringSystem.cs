@@ -6,66 +6,77 @@ namespace Player.playerFiring
     //todo suggestion move targeting to a seperate script
     public class FiringSystem : MonoBehaviour
     {
-        [SerializeField] public GameObject projectile = null;
-
-        [SerializeField] private double fireRate = 1;
-        [SerializeField] private double movePenalty = 0.33;
+        [Header("Projectile Settings")]
+        [SerializeField] private GameObject projectile = null;
+        [SerializeField] private float fireRate = 1f;
+        [Tooltip("fire time delay added for standing still.")]
+        [SerializeField] private float movePenalty = 0.33f;
+        [SerializeField] private Transform emptyGameObject;
+        [Header("Scripts Ref")]
         [SerializeField] private GameManager gameManager = null;
-        [SerializeField] private Rigidbody Rigidbody = null;
-        private Vector3 direction;
-        public GameObject target = null;
-        private double nextFire;
+        [SerializeField] private new Rigidbody rigidbody = null;
 
-        //todo ask which is better getComponent on start or adding via editor ?
-//        private void Start()
-//        {
-//            Rigidbody = gameObject.GetComponent<Rigidbody>();
-//        }
+        private GameObject target = null;
+        private Vector3 direction;
+        private float nextFire;
 
         public void Update()
         {
             if (nextFire > Time.time) return;
-            
-            if (!Rigidbody.velocity.AlmostZero())
+
+            if (!rigidbody.velocity.AlmostZero())
             {
                 nextFire += movePenalty;
                 target = null;
                 return;
             }
-            
+
             if (gameManager.Enemies.Count == 0) return;
 
             if (target == null)
             {
-                var startingPosition = gameObject.transform.position;
-                gameManager.Enemies.Sort(comparison: (x, y) => 
-                    (int) (Vector3.Distance(x.transform.position, startingPosition) -
-                           Vector3.Distance(y.transform.position, startingPosition)));
-                target = gameManager.Enemies[0];
-
-                var targetPosition = target.transform.position;
-                direction = targetPosition - startingPosition;
-                var distance = Vector3.Distance(targetPosition, startingPosition);
-                LayerMask mask = LayerMask.GetMask("enemy");
-                for (int i = 1; i < gameManager.Enemies.Count; i++)
-                {
-                    if (Physics.Raycast(startingPosition, direction, distance, ~mask))
-                    {
-                        target = gameManager.Enemies[i];
-                        direction = target.transform.position - startingPosition;
-                        distance = Vector3.Distance(target.transform.position, startingPosition);   
-                    }
-                } 
+                setTarget();
             }
             else
             {
                 direction = target.transform.position - gameObject.transform.position;
             }
 
-            GameObject bullet = Instantiate(projectile, gameObject.transform.position, transform.rotation);
+            fireProjectile();
+        }
+
+        private void fireProjectile()
+        {
+            GameObject bullet = Instantiate(projectile, transform.position, transform.rotation, emptyGameObject);
             bullet.transform.forward = direction;
-//            bullet.GetComponent<Rigidbody>().AddForce(direction * 500);
             nextFire = Time.time + fireRate;
+        }
+
+        private void setTarget()
+        {
+            Vector3 startingPosition = gameObject.transform.position;
+            gameManager.Enemies.Sort(comparison: (x, y) =>
+                (int)(Vector3.Distance(x.transform.position, startingPosition) -
+                       Vector3.Distance(y.transform.position, startingPosition)));
+            target = gameManager.Enemies[0];
+
+            Vector3 targetPosition = target.transform.position;
+            direction = targetPosition - startingPosition;
+            float distance = Vector3.Distance(targetPosition, startingPosition);
+            LayerMask mask = LayerMask.GetMask("enemy");
+            for (int i = 1; i < gameManager.Enemies.Count; i++)
+            {
+                if (Physics.Raycast(startingPosition, direction, distance, ~mask))
+                {
+                    target = gameManager.Enemies[i];
+                    direction = target.transform.position - startingPosition;
+                    distance = Vector3.Distance(target.transform.position, startingPosition);
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
     }
 }
