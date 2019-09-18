@@ -18,21 +18,25 @@ public class EnemyLogic : MonoBehaviour
     private void Start()
     {
         HealthSystem.onDeath += die;
+        gameManager.Enemies.Add(gameObject);
     }
 
     private void Update()
     {
+        bool canMove = true;
         foreach (Weapon weapon in weapons)
         {
-            if (!weapon.TryAttack(gameManager.GetPlayer(), gameObject))
-            {
-                enemyMovement.Move();
-            }
+            canMove = (!weapon.TryAttack(gameManager.GetPlayer(), gameObject)) && canMove;
+        }
+        if (canMove)
+        {
+            enemyMovement.Move();
         }
     }
 
-    private void die()
+    public void die()
     {
         Destroy(gameObject);
+        gameManager.Enemies.Remove(gameObject);
     }
 }
