@@ -9,7 +9,7 @@ namespace Player.playerFiring
         [Header("Projectile Settings")]
         [SerializeField] private GameObject projectile = null;
         [SerializeField] private float fireRate = 1f;
-        [Tooltip("fire time delay added for standing still.")]
+        [Tooltip("fire time delay added for moving.")]
         [SerializeField] private float movePenalty = 0.33f;
         [SerializeField] private Transform emptyGameObject;
         [Header("Scripts Ref")]
