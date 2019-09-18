@@ -14,7 +14,8 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     [Tooltip("HealthSystem component to assign this component to it's onDeath call")]
     private HealthSystem HealthSystem = null;
-
+    [SerializeField] 
+    private GameObject coin = null;
     private void Start()
     {
         HealthSystem.onDeath += die;
@@ -38,5 +39,13 @@ public class EnemyLogic : MonoBehaviour
     {
         Destroy(gameObject);
         gameManager.Enemies.Remove(gameObject);
+        Instantiate(coin, transform.position, Quaternion.identity);
+        if (gameManager.Enemies.Count == 0)
+        {
+            foreach (var coin in gameManager.Coins)
+            {
+                coin.GetComponent<CoinLogic>().GoToPlayer();
+            }
+        }
     }
 }

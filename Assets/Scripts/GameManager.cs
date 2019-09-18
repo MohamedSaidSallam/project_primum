@@ -11,11 +11,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     [Tooltip("The nav mesh surface of the map.")]
     private NavMeshSurface surface = null;
-
+    public List<GameObject> Coins { get; private set; }
     public List<GameObject> Enemies { get; private set; }
 
     public GameManager()
     {
+        Coins = new List<GameObject>();
         Enemies = new List<GameObject>();
     }
 
