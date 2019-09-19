@@ -16,6 +16,8 @@ public class EnemyLogic : MonoBehaviour
     private HealthSystem HealthSystem = null;
     [SerializeField] 
     private GameObject coin = null;
+    [SerializeField]
+    private int NoOfCoins = 3;
     private void Start()
     {
         HealthSystem.onDeath += die;
@@ -39,13 +41,14 @@ public class EnemyLogic : MonoBehaviour
     {
         Destroy(gameObject);
         gameManager.Enemies.Remove(gameObject);
-        Instantiate(coin, transform.position, Quaternion.identity);
-        if (gameManager.Enemies.Count == 0)
+        
+        for (int i = 0; i < NoOfCoins; i++)
         {
-            foreach (var coin in gameManager.Coins)
-            {
-                coin.GetComponent<CoinLogic>().GoToPlayer();
-            }
+            GameObject coin1 = Instantiate(coin,
+                                       transform.position,
+                                       Quaternion.identity);
+            coin1.GetComponent<CoinLogic>().SetGameManager(gameManager);
         }
+        
     }
 }

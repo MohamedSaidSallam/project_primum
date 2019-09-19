@@ -24,6 +24,16 @@ public class GameManager : MonoBehaviour
     {
     }
 
+    private void Update()
+    {
+        if (Enemies.Count == 0)
+        {
+            foreach (var coin in Coins)
+            {
+                coin.GetComponent<CoinLogic>().GoToPlayer();
+            }
+        }
+    }
     private void OnEnable()
     {
         surface.BuildNavMesh();
