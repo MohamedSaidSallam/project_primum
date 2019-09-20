@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
@@ -14,14 +15,34 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     [Tooltip("HealthSystem component to assign this component to it's onDeath call")]
     private HealthSystem HealthSystem = null;
-    [SerializeField] 
-    private GameObject coin = null;
     [SerializeField]
-    private int NoOfCoins = 3;
+    private GameObject coinPrefab = null;
+    [SerializeField]
+    private int numOfCoins = 3;
+
+    private List<GameObject> coins;
+
     private void Start()
     {
         HealthSystem.onDeath += die;
         gameManager.Enemies.Add(gameObject);
+
+        initializeCoins();
+    }
+
+    private void initializeCoins()
+    {
+        coins = new List<GameObject>();
+        for (int i = 0; i < numOfCoins; i++)
+        {
+            GameObject coin = Instantiate(coinPrefab,
+                        transform.position,
+                        Quaternion.identity,
+                        transform);
+            coin.SetActive(false);
+            coin.GetComponent<CoinLogic>().GameManager = gameManager;
+            coins.Add(coin);
+        }
     }
 
     private void Update()
@@ -41,14 +62,10 @@ public class EnemyLogic : MonoBehaviour
     {
         Destroy(gameObject);
         gameManager.Enemies.Remove(gameObject);
-        
-        for (int i = 0; i < NoOfCoins; i++)
+        foreach (GameObject coin in coins)
         {
-            GameObject coin1 = Instantiate(coin,
-                                       transform.position,
-                                       Quaternion.identity);
-            coin1.GetComponent<CoinLogic>().SetGameManager(gameManager);
+            coin.transform.parent = null;
+            coin.SetActive(true);
         }
-        
     }
 }

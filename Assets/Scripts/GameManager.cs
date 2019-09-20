@@ -11,12 +11,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     [Tooltip("The nav mesh surface of the map.")]
     private NavMeshSurface surface = null;
-    public List<GameObject> Coins { get; private set; }
+
+    public List<CoinLogic> Coins { get; private set; }
     public List<GameObject> Enemies { get; private set; }
 
-    public GameManager()
+    private void Awake()
     {
-        Coins = new List<GameObject>();
+        Coins = new List<CoinLogic>();
         Enemies = new List<GameObject>();
     }
 
@@ -28,12 +29,18 @@ public class GameManager : MonoBehaviour
     {
         if (Enemies.Count == 0)
         {
-            foreach (var coin in Coins)
-            {
-                coin.GetComponent<CoinLogic>().GoToPlayer();
-            }
+            moveCoinsToPlayer();
         }
     }
+
+    private void moveCoinsToPlayer()
+    {
+        foreach (CoinLogic coin in Coins)
+        {
+            coin.GoToPlayer();
+        }
+    }
+
     private void OnEnable()
     {
         surface.BuildNavMesh();

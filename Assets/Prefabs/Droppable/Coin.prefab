@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1174338192228657476}
   - component: {fileID: 5708389474194640785}
   m_Layer: 0
-  m_Name: coin
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,6 +126,6 @@ MonoBehaviour:
   rigidBody: {fileID: 1174338192228657476}
   player: {fileID: 0}
   gameManager: {fileID: 0}
-  radius: 8
-  power: 30
   speed: 0.1
+  randomForceStart: {x: 5, y: 30, z: 5}
+  randomForceEnd: {x: 15, y: 35, z: 15}

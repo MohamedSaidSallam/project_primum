@@ -1192,7 +1192,9 @@ MonoBehaviour:
   weapons: []
   enemyMovement: {fileID: 683800961}
   HealthSystem: {fileID: 683800962}
-  coin: {fileID: 8529937128652788607, guid: 7b6729e091fa1624288f45ec370ee45d, type: 3}
+  coinPrefab: {fileID: 8529937128652788607, guid: 7b6729e091fa1624288f45ec370ee45d,
+    type: 3}
+  numOfCoins: 3
 --- !u!195 &683800965
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1483,16 +1485,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 2024397182951961112, guid: 3e29689f75317eb4e9804412c0d9b5e7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2500147161905890735, guid: 3e29689f75317eb4e9804412c0d9b5e7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5062949700963994410, guid: 3e29689f75317eb4e9804412c0d9b5e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1547,6 +1539,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500147161905890735, guid: 3e29689f75317eb4e9804412c0d9b5e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024397182951961112, guid: 3e29689f75317eb4e9804412c0d9b5e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5628717692643140499, guid: 3e29689f75317eb4e9804412c0d9b5e7,
         type: 3}
@@ -2389,7 +2391,9 @@ MonoBehaviour:
   weapons: []
   enemyMovement: {fileID: 1665419818}
   HealthSystem: {fileID: 1665419811}
-  coin: {fileID: 8529937128652788607, guid: 7b6729e091fa1624288f45ec370ee45d, type: 3}
+  coinPrefab: {fileID: 8529937128652788607, guid: 7b6729e091fa1624288f45ec370ee45d,
+    type: 3}
+  numOfCoins: 3
 --- !u!195 &1665419814
 NavMeshAgent:
   m_ObjectHideFlags: 0
