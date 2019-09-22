@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 27137587}
   m_Layer: 0
   m_Name: tempWorldBorder_Left
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 397632691}
   m_Layer: 0
   m_Name: tempWorldBorder_Top
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 554944498}
   m_Layer: 0
   m_Name: tempWorldBorder_Right
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1340,7 +1340,7 @@ GameObject:
   - component: {fileID: 1139334548}
   m_Layer: 0
   m_Name: tempWorldBorder_Bottom
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1797,7 +1797,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503877265}
-  m_LocalRotation: {x: -0.0000000033351988, y: -0.8774615, z: 0.4796472, w: -0.000000001823122}
+  m_LocalRotation: {x: 0.000000010207694, y: -0.87746143, z: 0.47964722, w: 0.000000022952108}
   m_LocalPosition: {x: -1.3, y: 15.27, z: 20.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2588,7 +2588,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: -0.0000000033351988, y: -0.8774615, z: 0.4796472, w: -0.000000001823122}
+  m_LocalRotation: {x: 0.000000010207694, y: -0.87746143, z: 0.47964722, w: 0.000000022952108}
   m_LocalPosition: {x: -1.3, y: 15.27, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
