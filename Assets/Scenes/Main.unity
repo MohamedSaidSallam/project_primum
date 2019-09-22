@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489299095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.15, y: 0.27, z: 5.73}
+  m_LocalPosition: {x: -1.3, y: 0.27, z: 5.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1264891399}
@@ -1109,7 +1109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683800958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 0.575, z: 4.81}
+  m_LocalPosition: {x: 0.48, y: 0.27, z: 4.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1842113892}
@@ -1193,6 +1193,9 @@ MonoBehaviour:
   weapons: []
   enemyMovement: {fileID: 683800961}
   HealthSystem: {fileID: 683800962}
+  coinPrefab: {fileID: 8529937128652788607, guid: 7b6729e091fa1624288f45ec370ee45d,
+    type: 3}
+  numOfCoins: 3
 --- !u!195 &683800965
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1483,16 +1486,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 2024397182951961112, guid: 3e29689f75317eb4e9804412c0d9b5e7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2500147161905890735, guid: 3e29689f75317eb4e9804412c0d9b5e7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5062949700963994410, guid: 3e29689f75317eb4e9804412c0d9b5e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1547,6 +1540,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500147161905890735, guid: 3e29689f75317eb4e9804412c0d9b5e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024397182951961112, guid: 3e29689f75317eb4e9804412c0d9b5e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5628717692643140499, guid: 3e29689f75317eb4e9804412c0d9b5e7,
         type: 3}
@@ -2300,7 +2303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665419807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.27, z: -6}
+  m_LocalPosition: {x: 0, y: 0.27, z: 2.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1971097739}
@@ -2389,6 +2392,9 @@ MonoBehaviour:
   weapons: []
   enemyMovement: {fileID: 1665419818}
   HealthSystem: {fileID: 1665419811}
+  coinPrefab: {fileID: 8529937128652788607, guid: 7b6729e091fa1624288f45ec370ee45d,
+    type: 3}
+  numOfCoins: 3
 --- !u!195 &1665419814
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2777,7 +2783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788556949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.26, z: 0}
+  m_LocalPosition: {x: -0.07, y: -0.26, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 218410493}
@@ -3403,7 +3409,7 @@ PrefabInstance:
     - target: {fileID: 1656179010870774613, guid: 8443cd8ae50312e4da74f21c956bd6f8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 1656179010870774613, guid: 8443cd8ae50312e4da74f21c956bd6f8,
         type: 3}

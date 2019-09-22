@@ -11,7 +11,7 @@ namespace Player.playerFiring
         [SerializeField] private float fireRate = 1f;
         [Tooltip("fire time delay added for moving.")]
         [SerializeField] private float movePenalty = 0.33f;
-        [SerializeField] private Transform emptyGameObject;
+        [SerializeField] private Transform emptyGameObject = null;
         [Header("Scripts Ref")]
         [SerializeField] private GameManager gameManager = null;
         [SerializeField] private new Rigidbody rigidbody = null;
