@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - Obstacle
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - PostProcessing
   - enemy
   - player
-  - 
+  - Camera
   - 
   - 
   - 
