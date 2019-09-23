@@ -124,8 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1174338192228657476}
-  player: {fileID: 0}
-  gameManager: {fileID: 0}
   speed: 0.1
   randomForceStart: {x: 5, y: 30, z: 5}
   randomForceEnd: {x: 15, y: 35, z: 15}

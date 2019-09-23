@@ -40,7 +40,7 @@ public class CoinLogic : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, player.position, speed);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         //todo add money to player
         if (other.gameObject.CompareTag("Player") && gameManager.Enemies.Count == 0)
